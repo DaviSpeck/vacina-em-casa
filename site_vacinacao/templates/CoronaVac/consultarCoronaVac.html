@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+   <meta charset="UTF-8">
+   <link href="static/formularioConsulta.css" rel="stylesheet" type="text/css">
+   <title>Resultado da Consulta de Vacinação</title>
+</head>
+<body>
+    <section id="sec_titulo">
+        <h1>Resultado da consulta de vacinações</h1>
+    </section>
+
+    <section id="sec_consulta">
+        <table>
+            <tr>
+                <th>Nome da vacina</th>
+                <th>Localização</th>
+                <th>Data da vacinação</th>
+                <th>A partir do horário</th>
+            </tr>
+            {{ vacinacaoCoronavac | safe }}
+        </table>
+    </section>
+
+    <section id="sec_link">
+        <a href="/"> Voltar à página inicial </a>
+        <br/>
+        <a href="/parconsultarAstrazeneca"> Consultar vacinações da Astrazeneca </a>
+        <br/>
+        <a href="/parconsultarJanssen"> Consultar vacinações da Janssen </a>
+        <br/>
+        <a href="/parconsultarPfizer"> Consultar vacinações da Pfizer </a>
+    </section>
+</body>
+</html>

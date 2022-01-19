@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+   <meta charset="UTF-8">
+   <link href="static/formularioInclusao.css" rel="stylesheet" type="text/css">
+   <title>Formulário para alteração de vacinação</title>
+</head>
+<body>
+    <section id="sec_titulo">
+       <h1>Formulário de alteração de vacinações</h1>
+    </section>
+    <section>
+        <form action="/alterar" method="post">
+           <table>
+                    <tr>
+                       <td>Nome da vacina:</td>
+                       <td><input type="text" name="nomeVacina" size="50" maxlength="100" required/></td>
+                    </tr>
+                    <tr>
+                       <td>Localização:</td>
+                       <td><input type="text" name="local" size="75" maxlength="100" required/></td>
+                    </tr>
+                    <tr>
+                       <td>Data vacinação:</td>
+                       <td><input type="date" name="dataVaga" required/></td>
+                    </tr>
+                    <tr>
+                       <td>Horário vacinação:</td>
+                       <td><input type="time" name="horarioVaga" required/></td>
+                    </tr>
+                </table>
+                <section id="sec_inclusao">
+                    <input type="hidden" name="idVacinacao" value="{{ idVacinacao }}"/>
+                    <input type="submit" value="Incluir Vacinação"/>
+                </section>
+        </form>
+    </section>
+   <section id="sec_link">
+       <a href="/menuAdmin"> Voltar ao menu do administrador </a>
+       <a href="/parAlterar"> Alterar outra Vacinação</a>
+   </section>
+</body>
+</html>

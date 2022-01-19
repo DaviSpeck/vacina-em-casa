@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+   <meta charset="UTF-8">
+   <link href="static/formularioInclusao.css" rel="stylesheet" type="text/css">
+   <title>Escolher vacinação para excluir</title>
+</head>
+<body>
+  <section id="sec_titulo">
+    <h1>Escolher vacinação para excluir</h1>
+  </section>
+
+  <section>
+    <table>
+      <tr>
+        <th>Nome da vacina | Localização</th>
+        <th>Data da vacinação</th>
+        <th>Hora da vacinação</th>
+        <th>Excluir?</th>
+      </tr>
+      {{ vacinacoes | safe }}
+    </table>
+  </section>
+
+  <form action="/excluir" method="post" id="fm">
+    <section id="sec_inclusao">
+      <input type="hidden" name="idVacinacao" value="0" id="identificador"/>
+    </section>
+  </form>
+
+  <section id="sec_link">
+    <a href="/menuAdmin"> Voltar ao menu do administrador </a>
+  </section>
+</body>
+</html>
+
+<script>
+   // Função javascript para setar o identificador da vacinação para excluir após confirmação
+
+   function jsExcluir(vacinacao, idVacinacao){
+     var conf=confirm("Deseja realmente excluir " + vacinacao + " ?");
+     if (conf){
+        var f=document.getElementById("fm");
+        var i=document.getElementById("identificador");
+        i.value=idVacinacao;
+        f.submit();
+     }
+   }
+</script>

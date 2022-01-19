@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+   <meta charset="UTF-8">
+   <link href="static/formularioConsulta.css" rel="stylesheet" type="text/css">
+   <title>Parâmetros de Consulta de Vacinação</title>
+</head>
+<body>
+    <section id="sec_titulo">
+        <h1>Parâmetros de consulta de vacinações</h1>
+    </section>
+
+    <section id="sec_consulta">
+        <form action="/consultarPfizer" method="post">
+           <table class="table_consulta">
+               <tr>
+                   <td>Localização:</td>
+                   <td>{{ sel_local | safe }}</td>
+               </tr>
+           </table>
+           <input type="submit" value="Consultar Vacinação"/>
+        </form>
+    </section>
+
+    <section id="sec_link">
+        <a href="/"> Voltar à página inicial </a>
+    </section>
+</body>
+</html>
